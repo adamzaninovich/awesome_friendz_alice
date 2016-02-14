@@ -1,0 +1,2 @@
+defmodule AwesomeFriendzAlice do
+end
