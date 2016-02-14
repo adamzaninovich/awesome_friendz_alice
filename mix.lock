@@ -1,6 +1,6 @@
 %{"alice": {:hex, :alice, "0.1.0"},
-  "alice_against_humanity": {:git, "https://github.com/adamzaninovich/alice_against_humanity.git", "cb216d3427d2522c1e3ad7733fdc487280bf3363", []},
-  "alice_google_images": {:git, "https://github.com/adamzaninovich/alice_google_images.git", "b67a6ae58e5eb80402fe88cc36d1e15d0760ffbe", []},
+  "alice_against_humanity": {:hex, :alice_against_humanity, "0.0.1"},
+  "alice_google_images": {:hex, :alice_google_images, "0.0.1"},
   "certifi": {:hex, :certifi, "0.3.0"},
   "connection": {:hex, :connection, "1.0.2"},
   "exjsx": {:hex, :exjsx, "3.1.0"},

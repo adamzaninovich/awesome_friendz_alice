@@ -24,9 +24,9 @@ defmodule AwesomeFriendzAlice.Mixfile do
   defp deps do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
-       {:alice, "~> 0.1.0"},
-       {:alice_against_humanity, github: "adamzaninovich/alice_against_humanity"},
-       {:alice_google_images, github: "adamzaninovich/alice_google_images"}
+       {:alice,                  "~> 0.1.0"},
+       {:alice_against_humanity, "~> 0.0.1"},
+       {:alice_google_images,    "~> 0.0.1"}
      ]
   end
 end
