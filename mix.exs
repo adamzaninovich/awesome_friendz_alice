@@ -16,8 +16,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
         Alice, [
           Alice.Handlers.Random,
           Alice.Handlers.OhYouSo,
-          Alice.Handlers.GoogleImages,
-          Alice.Handlers.AgainstHumanity
+          Alice.Handlers.AgainstHumanity,
+          Alice.Handlers.GoogleImages
         ] } ]
   end
 
@@ -25,7 +25,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        {:alice, "~> 0.1.0"},
-       {:alice_against_humanity, github: "adamzaninovich/alice_against_humanity"}
+       {:alice_against_humanity, github: "adamzaninovich/alice_against_humanity"},
+       {:alice_google_images, github: "adamzaninovich/alice_google_images"}
      ]
   end
 end
