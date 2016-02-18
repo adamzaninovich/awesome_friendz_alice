@@ -75,7 +75,7 @@ defmodule Alice.Handlers.Random do
       http://i.imgur.com/o3o1fU3.gif]
     |> random_reply(conn)
   end
-  def handle(conn, :ddddddrop_the_bass) do
+  def handle(conn, :dddddrop_the_bass) do
     ~w[http://s3-ec.buzzfed.com/static/enhanced/webdr03/2013/2/15/9/anigif_enhanced-buzz-27236-1360939858-5.gif
       http://s3-ec.buzzfed.com/static/enhanced/webdr01/2013/2/15/9/anigif_enhanced-buzz-5139-1360939681-14.gif
       http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/2/15/11/enhanced-buzz-3235-1360947432-2.jpg
