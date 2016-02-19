@@ -55,7 +55,8 @@ defmodule Alice.Handlers.Random do
     "aww, I #{love} you too, #{Alice.Conn.at_reply_user(conn)}! #{emoji}" |> reply(conn)
   end
   def handle(conn, :die) do
-    "#{Alice.Conn.at_reply_user(conn)}, go fuck yourself!" |> reply(conn)
+    "hey #{Alice.Conn.at_reply_user(conn)}..." |> reply(conn)
+    "go fuck yourself" |> delayed_reply(900, conn)
   end
   def handle(conn, :mic_drop) do
     ~w[http://i.imgur.com/MpEqxwM.gif
@@ -122,5 +123,14 @@ defmodule Alice.Handlers.Random do
         |> reply(put_state(conn, :haha_count, 0))
       count -> put_state(conn, :haha_count, count + 1)
     end
+  end
+
+  defp delayed_reply(message, ms, conn) do
+    Task.start fn ->
+      Slack.indicate_typing(conn.message.channel, conn.slack)
+      :timer.sleep(ms)
+      reply(message, conn)
+    end
+    conn
   end
 end
