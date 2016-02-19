@@ -19,6 +19,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
+  command ~r/\bdie\z/i,                                    :die
 
   route ~r/\bmic ?drop\b/i,                                :mic_drop
   route ~r/\bdrop ?(the)? ?mic\b/i,                        :mic_drop
@@ -52,6 +53,9 @@ defmodule Alice.Handlers.Random do
     [love|_rest] = conn.message.captures |> Enum.reverse
     emoji = Enum.random(~w[:wink: :heart_eyes: :kissing_heart: :hugging_face:])
     "aww, I #{love} you too, #{Alice.Conn.at_reply_user(conn)}! #{emoji}" |> reply(conn)
+  end
+  def handle(conn, :die) do
+    "#{Alice.Conn.at_reply_user(conn)}, go fuck yourself!" |> reply(conn)
   end
   def handle(conn, :mic_drop) do
     ~w[http://i.imgur.com/MpEqxwM.gif
