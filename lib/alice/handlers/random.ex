@@ -13,9 +13,9 @@ defmodule Alice.Handlers.Random do
   route ~r/\bmadness\b/i,                                  :this_is_sparta
   route ~r/\bwat\b/i,                                      :wat
   route ~r/\bmind blown\b/i,                               :mind_blown
-  route ~r/\bgames?\b/i,                                   :the_game
   route ~r/\bthanks,? alice\b/i,                           :thanks
   route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
+  route ~r/\bgames?\b/i,                                   :the_game
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
@@ -45,10 +45,14 @@ defmodule Alice.Handlers.Random do
   def handle(conn, :mind_blown),        do: "http://i.imgur.com/lr4KJPQ.gif" |> reply(conn)
   def handle(conn, :this_is_sparta),    do: "http://i.imgur.com/ydJ3Vcr.jpg" |> reply(conn)
   def handle(conn, :wat),               do: "http://i.imgur.com/IppKJ.jpg"   |> reply(conn)
-  def handle(conn, :the_game),          do: chance_reply(0.25, "http://i.imgur.com/Z8awIpt.png", "I lost the game", conn)
   def handle(conn, :thanks),            do: "no prob, bob" |> reply(conn)
   def handle(conn, :aww_yiss),          do: "http://i.imgur.com/SEQTUr3.jpg" |> reply(conn)
 
+  def handle(conn, :the_game) do
+    :calendar.universal_time
+    |> :calendar.datetime_to_gregorian_seconds
+    |> game_response(get_state(conn, :next_loss, 0), conn)
+  end
   def handle(conn, :alice_love) do
     [love|_rest] = conn.message.captures |> Enum.reverse
     emoji = Enum.random(~w[:wink: :heart_eyes: :kissing_heart: :hugging_face:])
@@ -125,4 +129,11 @@ defmodule Alice.Handlers.Random do
     end
   end
 
+  defp game_response(now, next_loss, conn) when now < next_loss, do: conn
+  defp game_response(now, _, conn) do
+    chance_reply(0.25,
+                 "http://i.imgur.com/Z8awIpt.png",
+                 "I lost the game",
+                 put_state(conn, :next_loss, now + (30*60)))
+  end
 end
