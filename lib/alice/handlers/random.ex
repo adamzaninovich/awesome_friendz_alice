@@ -48,7 +48,7 @@ defmodule Alice.Handlers.Random do
   def handle(conn, :thanks),            do: "no prob, bob" |> reply(conn)
   def handle(conn, :aww_yiss),          do: "http://i.imgur.com/SEQTUr3.jpg" |> reply(conn)
 
-  def handle(conn=%Alice.Conn{message: {channel: channel}}, :the_game) do
+  def handle(conn=%Alice.Conn{message: %{channel: channel}}, :the_game) do
     :calendar.universal_time
     |> :calendar.datetime_to_gregorian_seconds
     |> game_response(get_state(conn, {:next_loss, channel}, 0), conn)
@@ -130,7 +130,7 @@ defmodule Alice.Handlers.Random do
   end
 
   defp game_response(now, next_loss, conn) when now < next_loss, do: conn
-  defp game_response(now, _, conn=%Alice.Conn{message: {channel: channel}}) do
+  defp game_response(now, _, conn=%Alice.Conn{message: %{channel: channel}}) do
     chance_reply(0.25,
                  "http://i.imgur.com/Z8awIpt.png",
                  "I lost the game",
