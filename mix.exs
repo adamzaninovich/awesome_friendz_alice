@@ -26,8 +26,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        {:alice,                  "~> 0.1.3"},
-       {:alice_against_humanity, "~> 0.0.1"},
-       {:alice_google_images,    "~> 0.0.1"},
+       {:alice_against_humanity, "~> 0.0.2"},
+       {:alice_google_images,    "~> 0.0.2"},
        {:alice_karma,            "~> 0.0.1"}
      ]
   end
