@@ -16,12 +16,13 @@ defmodule Alice.Handlers.Random do
   route ~r/\bthanks,? alice\b/i,                           :thanks
   command ~r/thanks/i,                                     :thanks
   route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
+  route ~r/\bdark ?souls?\b/,                              :i_dont_care
+
   route ~r/\bgames?\b/i,                                   :the_game
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
   command ~r/\bdie\z/i,                                    :die
-
   route ~r/\bmic ?drop\b/i,                                :mic_drop
   route ~r/\bdrop ?(the)? ?mic\b/i,                        :mic_drop
   route ~r/\bclear ?(your)? ?cache\??\b/i,                 :cache_bug
@@ -48,6 +49,7 @@ defmodule Alice.Handlers.Random do
   def handle(conn, :wat),               do: "http://i.imgur.com/IppKJ.jpg"   |> reply(conn)
   def handle(conn, :thanks),            do: "no prob, bob" |> reply(conn)
   def handle(conn, :aww_yiss),          do: "http://i.imgur.com/SEQTUr3.jpg" |> reply(conn)
+  def handle(conn, :i_dont_care),       do: "http://i.imgur.com/29A4xj5.gif" |> reply(conn)
 
   def handle(conn=%Alice.Conn{message: %{channel: channel}}, :the_game) do
     :calendar.universal_time
