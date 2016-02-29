@@ -103,6 +103,11 @@ defmodule Alice.Handlers.Random do
   end
   def handle(conn, :nope_nope_nope) do
     ~w[http://i.imgur.com/ZG8Y5XQ.gif
+      http://i.imgur.com/Bebd11u.gif
+      http://i.imgur.com/piqluC8.jpg
+      http://i.imgur.com/UUoYZjM.jpg
+      http://i.imgur.com/oQsSbYC.gif
+      http://i.imgur.com/HIN4HrI.gif
       http://i.imgur.com/yBE4JbR.jpg
       http://i.imgur.com/DgczUtV.png]
     |> random_reply(conn)
