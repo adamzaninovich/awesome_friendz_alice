@@ -16,7 +16,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\bthanks,? alice\b/i,                           :thanks
   command ~r/thanks/i,                                     :thanks
   route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
-  route ~r/\bdark ?souls?\b/,                              :i_dont_care
+  route ~r/\bdark ?souls?\b/i,                             :i_dont_care
 
   route ~r/\bgames?\b/i,                                   :the_game
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
