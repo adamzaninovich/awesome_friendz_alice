@@ -1,4 +1,4 @@
-%{"alice": {:hex, :alice, "0.2.0"},
+%{"alice": {:hex, :alice, "0.2.1"},
   "alice_against_humanity": {:hex, :alice_against_humanity, "0.1.0"},
   "alice_google_images": {:hex, :alice_google_images, "0.1.0"},
   "alice_karma": {:hex, :alice_karma, "0.1.0"},
