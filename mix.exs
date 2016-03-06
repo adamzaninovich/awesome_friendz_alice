@@ -19,19 +19,21 @@ defmodule AwesomeFriendzAlice.Mixfile do
           Alice.Handlers.AgainstHumanity,
           Alice.Handlers.GoogleImages,
           Alice.Handlers.Karma,
-          Alice.Handlers.Shizzle
+          Alice.Handlers.Shizzle,
+          Alice.Handlers.Xkcd
         ] } ]
   end
 
   defp deps do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
-       # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                  "0.2.3"},
+       {:alice, path: "~/projects/alice/alice", override: true},
+       # {:alice,                  "0.2.4"},
        {:alice_against_humanity, "~> 0.1.0"},
        {:alice_google_images,    "~> 0.1.0"},
        {:alice_karma,            "~> 0.1.0"},
-       {:alice_shizzle,          "~> 0.1.0", github: "adamzaninovich/alice_shizzle", branch: "updizzle-for-alice-0.2"}
+       {:alice_shizzle,          "~> 0.1.0"},
+       {:alice_xkcd,             "~> 0.0.1"}
      ]
   end
 end
