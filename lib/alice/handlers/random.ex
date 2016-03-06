@@ -72,7 +72,7 @@ defmodule Alice.Handlers.Random do
   @doc "`dark souls` - find out just how much Alice cares about Dark Souls"
   def i_dont_care(conn), do: "http://i.imgur.com/29A4xj5.gif" |> reply(conn)
 
-  @doc false
+  @doc ":troll:"
   def the_game(conn=%Alice.Conn{message: %{channel: channel}}) do
     :calendar.universal_time
     |> :calendar.datetime_to_gregorian_seconds
