@@ -21,7 +21,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
-  command ~r/\bdie\z/i,                                    :die
+  command ~r/\bdie\b/i,                                    :die
   route ~r/\bmic ?drop\b/i,                                :mic_drop
   route ~r/\bdrop ?(the)? ?mic\b/i,                        :mic_drop
   route ~r/\bclear ?(your)? ?cache\??\b/i,                 :cache_bug
