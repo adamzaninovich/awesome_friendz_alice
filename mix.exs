@@ -28,7 +28,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                  "0.2.3"},
+       {:alice,                  "0.3.0", override: true},
        {:alice_against_humanity, "~> 0.1.0"},
        {:alice_google_images,    "~> 0.1.0"},
        {:alice_karma,            "~> 0.1.0"},
