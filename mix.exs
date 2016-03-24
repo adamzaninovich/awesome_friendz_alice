@@ -3,7 +3,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   def project do
     [ app: :awesome_friendz_alice,
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.2",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -28,7 +28,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                  "0.3.2", override: true},
+       {:alice,                  "0.3.3", override: true},
        {:alice_against_humanity, "~> 0.1.0"},
        {:alice_google_images,    "~> 0.1.0"},
        {:alice_karma,            "~> 0.1.0"},
