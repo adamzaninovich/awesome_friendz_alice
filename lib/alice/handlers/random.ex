@@ -3,7 +3,8 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
-  route ~r/\btrol?l(ol)+o?\b/,                             :trololol
+  route ~r/\btro+l+(o+l+)+(o+)?\b/,                        :trololol
+  route ~r/\btable ?flip\b/,                               :table_flip
   route ~r/\bbig ?data\b/i,                                :big_data
   route ~r/\bcocaine\b/i,                                  :cocaine
   route ~r/\bdemeter\b/i,                                  :say_demeter_again
@@ -36,6 +37,9 @@ defmodule Alice.Handlers.Random do
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
+
+  @dof false
+  def table_flip(conn), do: "http://i.imgur.com/IFabn5c.gif" |> reply(conn)
 
   @doc "`big data`/`bigdata` - BIG data"
   def big_data(conn), do: "http://i.imgur.com/U6m4s4o.jpg" |> reply(conn)
