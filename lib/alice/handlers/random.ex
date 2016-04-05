@@ -34,6 +34,10 @@ defmodule Alice.Handlers.Random do
   route ~r/\bgooo+d\b/i,                                   :goooood
   route ~r/\b(ha(ha)+|lol)\b/i,                            :haha
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
+  command ~r/\beggplant me\z/i,                            :eggplant
+
+  @doc "`eggplant me` - get an eggplant from Alice"
+  def eggplant(conn), do: reply(conn, ":eggplant:")
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
