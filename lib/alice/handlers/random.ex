@@ -1,6 +1,8 @@
 defmodule Alice.Handlers.Random do
   use Alice.Router
 
+  alias Alice.Conn
+
   # Routes
 
   route ~r/\btro+l+(o+l+)+(o+)?\b/,                        :trololol
@@ -34,10 +36,8 @@ defmodule Alice.Handlers.Random do
   route ~r/\bgooo+d\b/i,                                   :goooood
   route ~r/\b(ha(ha)+|lol)\b/i,                            :haha
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
-  command ~r/\beggplant me\z/i,                            :eggplant
-
-  @doc "`eggplant me` - get an eggplant from Alice"
-  def eggplant(conn), do: reply(conn, ":eggplant:")
+  command ~r/\beggplant me\z/i,                            :single_eggplant
+  command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
@@ -85,14 +85,14 @@ defmodule Alice.Handlers.Random do
   def i_dont_care(conn), do: "http://i.imgur.com/29A4xj5.gif" |> reply(conn)
 
   @doc ":troll:"
-  def the_game(conn=%Alice.Conn{message: %{channel: channel}}) do
+  def the_game(conn=%Conn{message: %{channel: channel}}) do
     :calendar.universal_time
     |> :calendar.datetime_to_gregorian_seconds
     |> game_response(get_state(conn, {:next_loss, channel}, 0), conn)
   end
 
   defp game_response(now, next_loss, conn) when now < next_loss, do: conn
-  defp game_response(now, _, conn=%Alice.Conn{message: %{channel: channel}}) do
+  defp game_response(now, _, conn=%Conn{message: %{channel: channel}}) do
     conn
     |> put_state({:next_loss, channel}, now + (30*60))
     |> chance_reply(0.25, "http://i.imgur.com/Z8awIpt.png", "I lost the game")
@@ -108,13 +108,13 @@ defmodule Alice.Handlers.Random do
   def alice_love(conn) do
     [love|_rest] = conn.message.captures |> Enum.reverse
     emoji = Enum.random(~w[:wink: :heart_eyes: :kissing_heart: :hugging_face:])
-    "aww, I #{love} you too, #{Alice.Conn.at_reply_user(conn)}! #{emoji}" |> reply(conn)
+    "aww, I #{love} you too, #{Conn.at_reply_user(conn)}! #{emoji}" |> reply(conn)
   end
 
   @doc "`die` - request that Alice die. You might not like the response"
   def die(conn) do
     delayed_reply("go fuck yourself", 1200, conn)
-    reply("hey #{Alice.Conn.at_reply_user(conn)}...", conn)
+    reply("hey #{Conn.at_reply_user(conn)}...", conn)
   end
 
   @doc "`mic drop` - drop the mic"
@@ -209,5 +209,22 @@ defmodule Alice.Handlers.Random do
         |> reply("https://s3.amazonaws.com/giphymedia/media/Ic97mPViHEG5O/giphy.gif")
       count -> put_state(conn, :haha_count, count + 1)
     end
+  end
+
+  @doc "`eggplant me` - get an eggplant from Alice"
+  def single_eggplant(conn), do: eggplant(1, conn)
+
+  @doc "`eggplant me (num)` - get many eggplants from Alice"
+  def multi_eggplant(conn) do
+    conn
+    |> Conn.last_capture
+    |> String.to_integer
+    |> eggplant(conn)
+  end
+
+  defp eggplant(num, conn) do
+    ":eggplant: "
+    |> String.duplicate(num)
+    |> reply(conn)
   end
 end
