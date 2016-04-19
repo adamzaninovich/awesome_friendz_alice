@@ -49,7 +49,14 @@ defmodule Alice.Handlers.Random do
   def big_data(conn), do: "http://i.imgur.com/U6m4s4o.jpg" |> reply(conn)
 
   @doc "`cocaine` - ba ba da ba ba da cocaine!"
-  def cocaine(conn), do: "http://i.imgur.com/A3QICEQ.gif" |> reply(conn)
+  def cocaine(conn) do
+    ~w[
+      http://i.imgur.com/A3QICEQ.gif
+      http://i.imgur.com/biaviGH.gif
+      http://i.imgur.com/rIKgVmY.gif
+    ]
+    |> random_reply(conn)
+  end
 
   @doc "`demeter` - try me"
   def say_demeter_again(conn), do: "http://i.imgur.com/Z0jvLNm.jpg" |> reply(conn)
