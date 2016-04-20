@@ -3,7 +3,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   def project do
     [ app: :awesome_friendz_alice,
-      version: "0.2.2",
+      version: "0.2.3",
       elixir: "~> 1.2",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -20,7 +20,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
           Alice.Handlers.GoogleImages,
           Alice.Handlers.Karma,
           Alice.Handlers.Shizzle,
-          Alice.Handlers.Xkcd
+          Alice.Handlers.Xkcd,
+          Alice.Handlers.Reddit
         ] } ]
   end
 
@@ -33,7 +34,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_google_images,    "~> 0.1"},
        {:alice_karma,            "~> 0.1"},
        {:alice_shizzle,          "~> 0.1"},
-       {:alice_xkcd,             "~> 0.0"}
+       {:alice_xkcd,             "~> 0.0"},
+       {:alice_reddit,           "~> 0.0"}
      ]
   end
 end
