@@ -86,7 +86,10 @@ defmodule Alice.Handlers.Random do
   def thanks(conn), do: "no prob, bob" |> reply(conn)
 
   @doc "`aww yiss`/`bread crumbs` - motha fuckin' bread crumbs"
-  def aww_yiss(conn), do: "http://i.imgur.com/SEQTUr3.jpg" |> reply(conn)
+  def aww_yiss(conn) do
+    ~w[http://i.imgur.com/SEQTUr3.jpg http://i.imgur.com/znLCJe3.gif]
+    |> reply(conn)
+  end
 
   @doc "`dark souls` - find out just how much Alice cares about Dark Souls"
   def i_dont_care(conn), do: "http://i.imgur.com/29A4xj5.gif" |> reply(conn)
