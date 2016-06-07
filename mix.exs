@@ -32,7 +32,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice,                  "0.3.4", override: true},
        {:alice_against_humanity, "~> 0.1"},
        {:alice_google_images,    "~> 0.1"},
-       {:alice_karma,            "~> 0.1"},
+       {:alice_karma,            "~> 0.2"},
        {:alice_shizzle,          "~> 0.1"},
        {:alice_xkcd,             "~> 0.0"},
        {:alice_reddit,           "~> 0.0.3"}
