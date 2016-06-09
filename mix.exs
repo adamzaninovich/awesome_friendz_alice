@@ -11,7 +11,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
   end
 
   def application do
-    [ applications: [:alice],
+    [ applications: [:alice,  :alice_tielurs_heart_rate],
       mod: {
         Alice, [
           Alice.Handlers.Random,
