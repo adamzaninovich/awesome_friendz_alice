@@ -21,7 +21,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
           Alice.Handlers.Karma,
           Alice.Handlers.Shizzle,
           Alice.Handlers.Xkcd,
-          Alice.Handlers.Reddit
+          Alice.Handlers.Reddit,
+          Alice.Handlers.TielursHeartRate
         ] } ]
   end
 
@@ -29,13 +30,14 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                  "0.3.6", override: true},
-       {:alice_against_humanity, "~> 0.1"},
-       {:alice_google_images,    "~> 0.1"},
-       {:alice_karma,            "~> 0.2"},
-       {:alice_shizzle,          "~> 0.1"},
-       {:alice_xkcd,             "~> 0.0"},
-       {:alice_reddit,           "~> 0.0.3"}
+       {:alice,                    "0.3.6", override: true},
+       {:alice_against_humanity,   "~> 0.1"},
+       {:alice_google_images,      "~> 0.1"},
+       {:alice_karma,              "~> 0.2"},
+       {:alice_shizzle,            "~> 0.1"},
+       {:alice_xkcd,               "~> 0.0"},
+       {:alice_reddit,             "~> 0.0.3"},
+       {:alice_tielurs_heart_rate, "~> 0.1"}
      ]
   end
 end
