@@ -37,7 +37,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_shizzle,            "~> 0.1"},
        {:alice_xkcd,               "~> 0.0"},
        {:alice_reddit,             "~> 0.0.3"},
-       {:alice_tielurs_heart_rate, "~> 0.0.2"}
+       {:alice_tielurs_heart_rate, "~> 0.0.3"}
      ]
   end
 end
