@@ -88,7 +88,7 @@ defmodule Alice.Handlers.Random do
 
   @doc "`aww yiss`/`bread crumbs` - motha fuckin' bread crumbs"
   def aww_yiss(conn) do
-    ~w[http://i.imgur.com/SEQTUr3.jpg http://i.imgur.com/znLCJe3.gif]
+    ~w[http://i.imgur.com/SEQTUr3.jpg http://i.imgur.com/znLCJe3.gif http://i.imgur.com/6yJXSqr.gif]
     |> random_reply(conn)
   end
 
