@@ -10,27 +10,13 @@ defmodule AwesomeFriendzAlice.Mixfile do
       deps: deps ]
   end
 
-  def application do
-    [ applications: [:alice,  :alice_tielurs_heart_rate],
-      mod: {
-        Alice, [
-          Alice.Handlers.Random,
-          Alice.Handlers.OhYouSo,
-          Alice.Handlers.AgainstHumanity,
-          Alice.Handlers.GoogleImages,
-          Alice.Handlers.Karma,
-          Alice.Handlers.Shizzle,
-          Alice.Handlers.Xkcd,
-          Alice.Handlers.Reddit,
-          Alice.Handlers.TielursHeartRate
-        ] } ]
-  end
+  def application, do: [applications: [:alice, :alice_tielurs_heart_rate]]
 
   defp deps do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
-       # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                    "0.3.6", override: true},
+       {:alice, path: "~/projects/alice/alice", override: true},
+       # {:alice,                    "0.3.6", override: true},
        {:alice_against_humanity,   "~> 0.1"},
        {:alice_google_images,      "~> 0.1"},
        {:alice_karma,              "~> 0.2"},
