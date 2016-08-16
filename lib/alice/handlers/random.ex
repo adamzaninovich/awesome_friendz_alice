@@ -5,8 +5,8 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
-  route ~r/\btro+l+(o+l+)+(o+)?\b/,                        :trololol
-  route ~r/\btable ?flip\b/,                               :table_flip
+  route ~r/\btro+l+(o+l+)+(o+)?\b/i,                        :trololol
+  route ~r/\btable ?flip\b/i,                               :table_flip
   route ~r/\bbig ?data\b/i,                                :big_data
   route ~r/\bcocaine\b/i,                                  :cocaine
   route ~r/\bdemeter\b/i,                                  :say_demeter_again
