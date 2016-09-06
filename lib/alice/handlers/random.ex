@@ -5,8 +5,8 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
-  route ~r/\btro+l+(o+l+)+(o+)?\b/i,                        :trololol
-  route ~r/\btable ?flip\b/i,                               :table_flip
+  route ~r/\btro+l+(o+l+)+(o+)?\b/i,                       :trololol
+  route ~r/\btable ?flip\b/i,                              :table_flip
   route ~r/\bbig ?data\b/i,                                :big_data
   route ~r/\bcocaine\b/i,                                  :cocaine
   route ~r/\bdemeter\b/i,                                  :say_demeter_again
@@ -21,7 +21,7 @@ defmodule Alice.Handlers.Random do
   command ~r/thanks/i,                                     :thanks
   route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
   route ~r/\bdark ?souls?\b/i,                             :i_dont_care
-  route ~r/\bgames?\b/i,                                   :the_game
+  route ~r/\bthe games?\b/i,                               :the_game
   route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
@@ -96,7 +96,11 @@ defmodule Alice.Handlers.Random do
   def i_dont_care(conn), do: "http://i.imgur.com/29A4xj5.gif" |> reply(conn)
 
   @doc ":troll:"
-  def the_game(conn=%Conn{message: %{channel: channel}}) do
+  def the_game(%Conn{message: %{text: text}} = conn) do
+    the_game(conn, String.downcase(text))
+  end
+  def the_game(conn, "i lost the game"), do: conn
+  def the_game(%Conn{message: %{channel: channel}} = conn, _) do
     :calendar.universal_time
     |> :calendar.datetime_to_gregorian_seconds
     |> game_response(get_state(conn, {:next_loss, channel}, 0), conn)
