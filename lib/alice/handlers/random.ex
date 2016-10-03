@@ -22,7 +22,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
   route ~r/\bdark ?souls?\b/i,                             :i_dont_care
   route ~r/\bthe games?\b/i,                               :the_game
-  route ~r/\bI (love|:heart:) you,? alice\b/i,             :alice_love
+  route ~r/\b(I )?(love|:heart:) (yo)?u,? alice\b/i,       :alice_love
   route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
   command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
   command ~r/\bdie\b/i,                                    :die
