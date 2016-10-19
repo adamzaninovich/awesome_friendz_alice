@@ -5,6 +5,7 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
+  route ~r/\bgood ?morning\b/i,                            :flowery_bullshit
   route ~r/\btro+l+(o+l+)+(o+)?\b/i,                       :trololol
   route ~r/\btable ?flip\b/i,                              :table_flip
   route ~r/\bbig ?data\b/i,                                :big_data
@@ -38,6 +39,9 @@ defmodule Alice.Handlers.Random do
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
   command ~r/\beggplant me\z/i,                            :single_eggplant
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
+
+  @doc false
+  def flowery_bullshit, do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
