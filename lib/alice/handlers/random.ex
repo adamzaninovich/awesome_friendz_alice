@@ -41,7 +41,7 @@ defmodule Alice.Handlers.Random do
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
 
   @doc false
-  def flowery_bullshit, do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
+  def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
