@@ -11,19 +11,24 @@ defmodule AwesomeFriendzAlice.Mixfile do
   end
 
   def application do
-    [ applications: [:alice,  :alice_tielurs_heart_rate],
-      mod: {
-        Alice, [
-          Alice.Handlers.Random,
-          Alice.Handlers.OhYouSo,
-          Alice.Handlers.AgainstHumanity,
-          Alice.Handlers.GoogleImages,
-          Alice.Handlers.Karma,
-          Alice.Handlers.Shizzle,
-          Alice.Handlers.Xkcd,
-          Alice.Handlers.Reddit,
-          Alice.Handlers.TielursHeartRate
-        ] } ]
+    [
+      applications: [:alice, :alice_tielurs_heart_rate, :alice_reddit],
+      mod: {Alice, handlers}
+    ]
+  end
+
+  defp handlers do
+    [
+      Alice.Handlers.Random,
+      Alice.Handlers.OhYouSo,
+      Alice.Handlers.AgainstHumanity,
+      Alice.Handlers.GoogleImages,
+      Alice.Handlers.Karma,
+      Alice.Handlers.Shizzle,
+      Alice.Handlers.Xkcd,
+      Alice.Handlers.Reddit,
+      Alice.Handlers.TielursHeartRate
+    ]
   end
 
   defp deps do
@@ -36,7 +41,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_karma,              "~> 0.2"},
        {:alice_shizzle,            "~> 0.1"},
        {:alice_xkcd,               "~> 0.0"},
-       {:alice_reddit,             "~> 0.0.3"},
+       {:alice_reddit,             "~> 0.0.4"},
        {:alice_tielurs_heart_rate, "~> 0.0.6"}
      ]
   end
