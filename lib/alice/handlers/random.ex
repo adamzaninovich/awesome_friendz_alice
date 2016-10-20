@@ -40,6 +40,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
   command ~r/\beggplant me\z/i,                            :single_eggplant
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
+  command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
@@ -248,4 +249,7 @@ defmodule Alice.Handlers.Random do
     |> String.duplicate(num)
     |> reply(conn)
   end
+
+  @doc false
+  def are_you_high(conn), do: "http://i.imgur.com/gdnNcF1.jpg" |> reply(conn)
 end
