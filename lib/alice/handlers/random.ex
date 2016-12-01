@@ -46,7 +46,7 @@ defmodule Alice.Handlers.Random do
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
 
   @doc false
-  def flowery_bullshit_chance(conn), do: chance_reply(conn, 0.8, "http://i.imgur.com/ioLp3DW.jpg")
+  def flowery_bullshit_chance(conn), do: chance_reply(conn, 0.5, "http://i.imgur.com/ioLp3DW.jpg")
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
