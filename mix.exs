@@ -12,7 +12,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   def application do
     [
-      applications: [:alice, :alice_tielurs_heart_rate, :alice_reddit],
+      applications: [:alice, :alice_tielurs_heart_rate, :alice_reddit, :alice_doge_me],
       mod: {Alice, handlers}
     ]
   end
@@ -27,7 +27,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
       Alice.Handlers.Shizzle,
       Alice.Handlers.Xkcd,
       Alice.Handlers.Reddit,
-      Alice.Handlers.TielursHeartRate
+      Alice.Handlers.TielursHeartRate,
+      Alice.Handlers.Dogeme
     ]
   end
 
@@ -42,7 +43,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_shizzle,            "~> 0.1"},
        {:alice_xkcd,               "~> 0.0"},
        {:alice_reddit,             "~> 0.0.4"},
-       {:alice_tielurs_heart_rate, "~> 0.0.6"}
+       {:alice_tielurs_heart_rate, "~> 0.0.6"},
+       {:alice_doge_me,            "~> 0.1.0"}
      ]
   end
 end
