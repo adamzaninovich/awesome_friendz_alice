@@ -1,5 +1,6 @@
 %{"alice": {:hex, :alice, "0.3.6", "e5dd91d783889b3af337e67d55af86bcf490aa9216a9492fc18b2f0a6fc3dcfd", [:mix], [{:poison, "~> 2.1", [hex: :poison, optional: false]}, {:poolboy, "~> 1.5.0", [hex: :poolboy, optional: false]}, {:redix, "~> 0.3.0", [hex: :redix, optional: false]}, {:slack, "~> 0.4.2", [hex: :slack, optional: false]}]},
   "alice_against_humanity": {:hex, :alice_against_humanity, "0.1.2", "040d391f62cce2dd6965a22b56d33a2e2e9fef0e0ce02a25056e467641953a16", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
+  "alice_doge_me": {:hex, :alice_doge_me, "0.1.0", "5953c563262198e48f4bc2fafb7635b94e0787bebf8a501e323ad68512d4dcc4", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
   "alice_google_images": {:hex, :alice_google_images, "0.1.3", "8b26e5418c11ab764f61b80bd8212e3df2f3bd686e86d7f279d5dc637be47650", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
   "alice_karma": {:hex, :alice_karma, "0.2.1", "30e460792ab6f4281fab5141af7a388fcdd275ab2b4446b698e9ae65e50e41dd", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
   "alice_reddit": {:hex, :alice_reddit, "0.0.4", "2b24ab9a270cef9a729d33ab58bfbfd6e2b106da42364e7c0c8b40d7ac239f9d", [:mix], [{:alice, "~> 0.2", [hex: :alice, optional: false]}, {:readit, ">= 0.0.4", [hex: :readit, optional: false]}]},
