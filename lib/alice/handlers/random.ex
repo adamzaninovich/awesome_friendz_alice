@@ -5,7 +5,7 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
-  route ~r/\bgoo+d ?morning!*\b/i,                         :flowery_bullshit
+  route ~r/\bgoo+d ?morning!*\b/i,                         :flowery_bullshit_chance
   route ~r/\bflowery bullshit\b/i,                         :flowery_bullshit
   route ~r/\btro+l+(o+l+)+(o+)?\b/i,                       :trololol
   route ~r/\btable ?flip\b/i,                              :table_flip
@@ -44,6 +44,9 @@ defmodule Alice.Handlers.Random do
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
+
+  @doc false
+  def flowery_bullshit_chance(conn), do: chance_reply(conn, 0.5, "http://i.imgur.com/ioLp3DW.jpg")
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
@@ -200,7 +203,8 @@ defmodule Alice.Handlers.Random do
       http://i.imgur.com/HIN4HrI.gif
       http://i.imgur.com/yBE4JbR.jpg
       http://i.imgur.com/DgczUtV.png
-      http://i.imgur.com/RgylcEM.png]
+      http://i.imgur.com/RgylcEM.png
+      http://i.imgur.com/LRBIPMP.png]
     |> random_reply(conn)
   end
 
