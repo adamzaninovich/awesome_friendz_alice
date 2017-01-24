@@ -35,8 +35,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
   defp deps do
      [
        # {:alice, path: "~/projects/alice/alice", override: true},
-       # {:alice,                    "0.3.6", override: true},
-       {:alice, github: "vaihtovirta/alice", branch: "upgrade-slack-dependency", override: true},
+       {:alice,                    "0.3.6", override: true},
+       # {:alice, github: "vaihtovirta/alice", branch: "upgrade-slack-dependency", override: true},
        {:alice_against_humanity,   "~> 0.1"},
        {:alice_google_images,      "~> 0.1"},
        {:alice_karma,              "~> 0.3"},
