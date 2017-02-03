@@ -13,7 +13,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
   def application do
     [
       applications: [:alice, :alice_tielurs_heart_rate, :alice_reddit, :alice_doge_me],
-      mod: {Alice, handlers}
+      mod: {Alice, %{handlers: handlers}}
     ]
   end
 
@@ -36,7 +36,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
      [
        {:websocket_client, github: "jeremyong/websocket_client"},
        # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                    "0.3.6", override: true},
+       {:alice,                    github: "alice-bot/alice", override: true},
        {:alice_against_humanity,   "~> 0.1"},
        {:alice_google_images,      "~> 0.1"},
        {:alice_karma,              "~> 0.3"},
