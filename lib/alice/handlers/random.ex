@@ -46,9 +46,10 @@ defmodule Alice.Handlers.Random do
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
 
   @doc false
-  def flowery_bullshit_chance(conn), do: chance_reply(conn, 0.5,
-    Enum.random ~w[http://i.imgur.com/ioLp3DW.jpg
-                   http://i.imgur.com/O2qXHvE.jpg])
+  def flowery_bullshit_chance(conn) do
+    chance_reply(conn, 0.5, ["http://i.imgur.com/ioLp3DW.jpg",
+                             "http://i.imgur.com/O2qXHvE.jpg"])
+  end
 
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
