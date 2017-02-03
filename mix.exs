@@ -34,9 +34,10 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   defp deps do
      [
-       {:websocket_client, github: "jeremyong/websocket_client"},
+       # {:websocket_client, github: "jeremyong/websocket_client"},
        # {:alice, path: "~/projects/alice/alice", override: true},
-       {:alice,                    github: "alice-bot/alice", override: true},
+       {:alice,                    github: "vaihtovirta/alice", branch: "upgrade-slack-dependency", override: true},
+       {:httpoison, "0.11.0", override: true},
        {:alice_against_humanity,   "~> 0.1"},
        {:alice_google_images,      "~> 0.1"},
        {:alice_karma,              "~> 0.3"},
