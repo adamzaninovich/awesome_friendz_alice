@@ -262,7 +262,7 @@ defmodule Alice.Handlers.Random do
   def are_you_high(conn), do: "http://i.imgur.com/gdnNcF1.jpg" |> reply(conn)
 
   def bass_face(conn) do
-    new_message = Map.put(conn.message, :text, "img me shit")
+    new_message = Map.put(conn.message, :text, "este haim bass face")
     Alice.ChatBackends.Slack.handle_message(new_message, conn.slack, conn.state)
     conn
   end
