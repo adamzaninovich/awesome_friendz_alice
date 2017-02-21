@@ -1,4 +1,4 @@
-%{"alice": {:git, "https://github.com/vaihtovirta/alice.git", "64ac299ad18c1d20cd252b1fc2fafb805476b45b", [branch: "upgrade-slack-dependency"]},
+%{"alice": {:git, "https://github.com/alice-bot/alice.git", "9ce824a2490f049b23537313a7b407bcdb1e36f8", [branch: "master"]},
   "alice_against_humanity": {:hex, :alice_against_humanity, "0.1.2", "040d391f62cce2dd6965a22b56d33a2e2e9fef0e0ce02a25056e467641953a16", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
   "alice_doge_me": {:hex, :alice_doge_me, "0.1.1", "71ed6e36681e20f51d76f7ea57e41014644230b1bb9b9d8876c8e071a753bc7c", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
   "alice_google_images": {:hex, :alice_google_images, "0.1.3", "8b26e5418c11ab764f61b80bd8212e3df2f3bd686e86d7f279d5dc637be47650", [:mix], [{:alice, "~> 0.3", [hex: :alice, optional: false]}]},
