@@ -17,7 +17,6 @@ defmodule Alice.Handlers.Random do
   route ~r/\bdev[- ]?ops\b/i,                              :devops
   route ~r/\bIT IS DECIDED\!?\b/,                          :it_is_decided
   route ~r/\bmadness\b/i,                                  :this_is_sparta
-  route ~r/\bwat\b/i,                                      :wat
   route ~r/\bmind blown\b/i,                               :mind_blown
   route ~r/\bthanks,? alice\b/i,                           :thanks
   command ~r/thanks/i,                                     :thanks
@@ -91,9 +90,6 @@ defmodule Alice.Handlers.Random do
 
   @doc "`this is <anything>` - THIS IS SPARTA"
   def this_is_sparta(conn), do: "http://i.imgur.com/ydJ3Vcr.jpg" |> reply(conn)
-
-  @doc "`wat` - wat"
-  def wat(conn), do: "http://i.imgur.com/IppKJ.jpg"   |> reply(conn)
 
   @doc "Either `thanks alice` or `@alice thanks` - tell Alice thanks"
   def thanks(conn), do: "no prob, bob" |> reply(conn)
