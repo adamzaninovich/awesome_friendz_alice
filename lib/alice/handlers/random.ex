@@ -129,6 +129,9 @@ defmodule Alice.Handlers.Random do
       `alice, I love`/:heart:` you`
       `@alice I love`/:heart:` you`
   """
+  def alice_love(%Conn{message: %{user: "U0LADD3C4"}}=conn) do
+    reply(conn, "aww, we're such good friends, #{Conn.at_reply_user(conn)}! :+1:")
+  end
   def alice_love(conn) do
     [love|_rest] = conn.message.captures |> Enum.reverse
     emoji = Enum.random(~w[:wink: :heart_eyes: :kissing_heart: :hugging_face:])
