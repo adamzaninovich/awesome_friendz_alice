@@ -75,7 +75,7 @@ defmodule Alice.Handlers.Random do
   def say_demeter_again(conn), do: "http://i.imgur.com/Z0jvLNm.jpg" |> reply(conn)
 
   @doc "`grapes` - your grapes"
-  def grapes(conn), do: chance_reply(conn, 0.50, "http://i.imgur.com/v4y3BLl.gif", ":grapes:")
+  def grapes(conn), do: chance_reply(conn, 0.05, "http://i.imgur.com/v4y3BLl.gif", ":grapes:")
 
   @doc "`busted` - get busted by Mr. Biggs"
   def busted(conn), do: "http://i.imgur.com/MasM57I.png" |> reply(conn)
