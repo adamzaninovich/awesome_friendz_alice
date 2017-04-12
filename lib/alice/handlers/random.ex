@@ -12,7 +12,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\bbig ?data\b/i,                                :big_data
   route ~r/\bcocaine\b/i,                                  :cocaine
   route ~r/\bdemeter\b/i,                                  :say_demeter_again
-  route ~r/\bgrapes\b/i,                                   :fuck_yo_grapes
+  route ~r/\bgrapes\b/i,                                   :grapes
   route ~r/\bbusted\b/i,                                   :busted
   route ~r/\bdev[- ]?ops\b/i,                              :devops
   route ~r/\bIT IS DECIDED\!?\b/,                          :it_is_decided
@@ -74,8 +74,8 @@ defmodule Alice.Handlers.Random do
   @doc "`demeter` - try me"
   def say_demeter_again(conn), do: "http://i.imgur.com/Z0jvLNm.jpg" |> reply(conn)
 
-  @doc "`grapes` - your grapes, fuck 'em"
-  def fuck_yo_grapes(conn), do: "http://i.imgur.com/v4y3BLl.gif" |> reply(conn)
+  @doc "`grapes` - your grapes"
+  def grapes(conn), do: chance_reply(conn, 0.01, "http://i.imgur.com/v4y3BLl.gif", ":grapes:")
 
   @doc "`busted` - get busted by Mr. Biggs"
   def busted(conn), do: "http://i.imgur.com/MasM57I.png" |> reply(conn)
