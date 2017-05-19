@@ -21,6 +21,6 @@ defmodule Alice.Handlers.GrammarNazi do
   def correct_of(conn, word) do
     delayed_reply(~s(or maybe "#{word} have"), 1200, conn)
     delayed_reply("Anyway, you're welcome! :+1:", 3600, conn)
-    ~s(Hey #{Conn.at_reply_user(conn)}, I think you mean "#{word}'ve")
+    reply(conn, ~s(Hey #{Conn.at_reply_user(conn)}, I think you mean "#{word}'ve"))
   end
 end
