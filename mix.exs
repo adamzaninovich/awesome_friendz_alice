@@ -20,6 +20,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
   defp handlers do
     [
       Alice.Handlers.Random,
+      Alice.Handlers.GrammarNazi,
       Alice.Handlers.OhYouSo,
       Alice.Handlers.AgainstHumanity,
       Alice.Handlers.GoogleImages,
