@@ -179,11 +179,13 @@ defmodule Alice.Handlers.Random do
       `dubstep`
   """
   def dddddrop_the_bass(conn) do
-    ~w[http://s3-ec.buzzfed.com/static/enhanced/webdr03/2013/2/15/9/anigif_enhanced-buzz-27236-1360939858-5.gif
-      http://s3-ec.buzzfed.com/static/enhanced/webdr01/2013/2/15/9/anigif_enhanced-buzz-5139-1360939681-14.gif
-      http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/2/15/11/enhanced-buzz-3235-1360947432-2.jpg
+    ~w[
+      https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr03/2013/2/15/9/anigif_enhanced-buzz-27236-1360939858-5.gif
+      https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr01/2013/2/15/9/anigif_enhanced-buzz-5139-1360939681-14.gif
+      https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr02/2013/2/15/11/enhanced-buzz-3235-1360947432-2.jpg
       http://i1212.photobucket.com/albums/cc460/bbtlv/dubstep.gif
-      http://i.imgur.com/kUtovs7.gif]
+      http://i.imgur.com/kUtovs7.gif
+    ]
     |> random_reply(conn)
   end
 
