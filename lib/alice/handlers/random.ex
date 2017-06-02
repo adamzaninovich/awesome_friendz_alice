@@ -40,7 +40,7 @@ defmodule Alice.Handlers.Random do
   command ~r/\beggplant me\z/i,                            :single_eggplant
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
   command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
-  route ~r/(?<!img me este haim )bass/i,                   :bass_face
+  route ~r/(?<!img me este haim )bass ?face/i,             :bass_face
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
@@ -262,7 +262,7 @@ defmodule Alice.Handlers.Random do
 
   def bass_face(conn) do
     new_message = Map.put(conn.message, :text, "img me este haim bass face")
-    Alice.ChatBackends.Slack.handle_message(new_message, conn.slack, conn.state)
+    Alice.ChatBackends.Slack.handle_event(new_message, conn.slack, conn.state)
     conn
   end
 end
