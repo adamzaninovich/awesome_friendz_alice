@@ -47,8 +47,7 @@ defmodule Alice.Handlers.Random do
 
   @doc false
   def good_morning(conn) do
-    random_reply(conn, ["http://i.imgur.com/ioLp3DW.jpg",
-                        "http://i.imgur.com/OAFDS8L.jpg"])
+    chance_reply(conn, 0.8, "http://i.imgur.com/ioLp3DW.jpg", "http://i.imgur.com/OAFDS8L.jpg")
   end
 
   @doc false
