@@ -4,7 +4,7 @@ defmodule Alice.Handlers.GrammarNazi do
 
   alias Alice.Conn
 
-  route ~r/\b((w|c|sh)ould(n't)?) of\b/i, :correct_of
+  route ~r/\b(((w|c|sh)ould(n't)?)|must) of\b/i, :correct_of
 
   @doc "Corrects your terrible grammar. Not an actual Nazi."
   def correct_of(%Conn{message: %{captures: captures}}=conn) do
