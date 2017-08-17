@@ -1,6 +1,6 @@
 defmodule Alice.Handlers.GrammarNazi do
   use Alice.Router
-  @moduledoc "Corrects your terrible grammar. Not an actual Nazi."
+  @moduledoc "Corrects your terrible grammar. Not an actual Nazi. Does not condone Nazis."
 
   alias Alice.Conn
 
