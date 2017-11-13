@@ -22,7 +22,6 @@ defmodule AwesomeFriendzAlice.Mixfile do
       Alice.Handlers.Random,
       Alice.Handlers.GrammarNazi,
       Alice.Handlers.OhYouSo,
-      Alice.Handlers.Feedback,
       Alice.Handlers.AgainstHumanity,
       Alice.Handlers.GoogleImages,
       Alice.Handlers.Karma,
