@@ -4,30 +4,34 @@ defmodule Alice.Handlers.Feedback do
 
   alias Alice.Conn
 
-  route ~r/\b(feedback|idea|bug|enhancement|suggestion) *for *alice *:?(.+)/i, :feedback
+  command ~r/> (handler-idea|bug|feedback) (.+)/i, :feedback
 
   @doc """
-  `feedback\idea\suggestion\enhancement\bug for alice(:) some feedback details`
-  Opens a Github issue with the provided feedback details and the type of feedback
-  applied as a label
+  `<label> <title>` - Create a GitHub Issue on alice-bot/alice repository.
+  Possible labels are `feedback`, `handler-idea`, `bug`.
   """
+
   def feedback(%Conn{message: %{captures: captures}}=conn) do
     [_full, label, feedback] = captures
-    delayed_reply(~s(Please click #{github_issues_url(label, feedback)} to review and submit a ticket.), 1200, conn)
-    reply(conn, ~s(Thank you for providing feedback #{Conn.at_reply_user(conn)}))
+    delayed_reply(~s(Thank you for providing feedback #{Conn.at_reply_user(conn)}), 1200, conn)
+    reply(conn, ~s(Please click #{github_issues_url(label, feedback)} to review and submit a ticket.))
   end
 
   defp github_issues_url(label, feedback) do
     label
+    |> String.downcase
     |> format_label
-    |> encoded_query(String.trim_leading(feedback))
+    |> encoded_query(feedback)
     |> URI.encode_query
     |> build_url
   end
 
-  defp format_label(label), do: if label in ~w(feedback idea suggestion enhancement), do: "enhancement", else: label
+  defp format_label("handler-idea"), do: "handler idea"
+  defp format_label(label), do: label
 
-  defp encoded_query(label, feedback), do: %{ "labels" => label, "title" => feedback }
+  defp format_feedback(feedback), do: feedback |> String.trim_leading |> String.capitalize
 
-  defp build_url(encoded_query), do: "github.com/alice-bot/alice/issues/new?" <> encoded_query
+  defp encoded_query(label, feedback), do: %{"labels" => label, "title" => format_feedback(feedback)}
+
+  defp build_url(encoded_query), do: "github.com/alice-bot/alice/issues/new?#{encoded_query}"
 end
