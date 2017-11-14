@@ -17,7 +17,7 @@ defmodule Alice.Handlers.Feedback do
 
   def feedback(%Conn{message: %{captures: [_full, label, title]}}=conn) do
     reply(conn, "Thank you for your feedback!")
-    reply(conn, "Please click #{github_issues_url(label, title)} to review and submit a ticket.")
+    reply(conn, "Please click #{github_issues_url(label, title)} to review and finialize your submission.")
   end
 
   defp github_issues_url(label, title) do
