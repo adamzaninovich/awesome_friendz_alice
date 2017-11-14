@@ -42,7 +42,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_shizzle,            "~> 0.1"},
        {:alice_reddit,             "~> 0.1"},
        {:alice_doge_me,            "~> 0.1"},
-       {:alice_eats,               "~> 0.1"}
+       {:alice_eats,               "~> 0.1"},
+       {:httpoison, "~> 0.13.0"}
      ]
   end
 end
