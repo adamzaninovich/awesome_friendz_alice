@@ -37,15 +37,15 @@ defmodule AwesomeFriendzAlice.Mixfile do
   defp deps do
      [
        {:alice, github: "alice-bot/alice", branch: "master", override: true},
-       {:alice_against_humanity,   "~> 0.1"},
-       {:alice_google_images,      "~> 0.1"},
-       {:alice_karma,              "~> 0.3"},
-       {:alice_shizzle,            "~> 0.1"},
-       {:alice_reddit,             "~> 0.1"},
-       {:alice_doge_me,            "~> 0.1"},
-       {:alice_eats,               "~> 0.1"},
-       {:httpoison, "~> 0.13.0"},
-       {:alice_wiki, "~> 0.1.1"}
+       {:httpoison,              "~> 0.13"},
+       {:alice_against_humanity, "~> 0.1"},
+       {:alice_google_images,    "~> 0.1"},
+       {:alice_karma,            "~> 0.3"},
+       {:alice_shizzle,          "~> 0.1"},
+       {:alice_reddit,           "~> 0.1"},
+       {:alice_doge_me,          "~> 0.1"},
+       {:alice_eats,             "~> 0.1"},
+       {:alice_wiki,             "~> 1.0"}
      ]
   end
 end
