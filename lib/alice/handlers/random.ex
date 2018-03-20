@@ -41,8 +41,8 @@ defmodule Alice.Handlers.Random do
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
   command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
   route ~r/(?<!img me este haim )bass ?face/i,             :bass_face
-  command ~r/\btoast me\z/i,                               :single_toast
-  command ~r/\btoast me (\d+)\z/i,                         :multi_toast
+  command ~r/\b(toast|bear) me\z/i,                               :single_toast
+  command ~r/\b(toast|bear) me (\d+)\z/i,                         :multi_toast
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
