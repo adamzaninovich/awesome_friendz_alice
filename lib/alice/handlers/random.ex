@@ -262,13 +262,6 @@ defmodule Alice.Handlers.Random do
     |> reply(conn)
   end
 
-
-"ʕ" <> String.duplicate("•̫͡•#{Enum.random(["ʕ", "ʔ"])}", num)
-|> String.replace_suffix("ʕ", "ʔ")
-    |> reply(conn)
-  end
-
-
   @doc "`eggplant me` - get an eggplant from Alice"
   def single_eggplant(conn), do: eggplant(1, conn)
 
