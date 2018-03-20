@@ -41,6 +41,8 @@ defmodule Alice.Handlers.Random do
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
   command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
   route ~r/(?<!img me este haim )bass ?face/i,             :bass_face
+  command ~r/\btoast me\z/i,                               :single_toast
+  command ~r/\btoast me (\d+)\z/i,                         :multi_toast
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
@@ -240,6 +242,32 @@ defmodule Alice.Handlers.Random do
       count -> put_state(conn, :haha_count, count + 1)
     end
   end
+
+  @doc "`toast me` - makes happy toast"
+  def single_toast(conn), do: toast(1, conn)
+
+  @doc "`toast me (num)` - makes many happy toastes"
+  def multi_toast(conn) do
+    conn
+    |> Conn.last_capture
+    |> String.to_integer
+    |> toast(conn)
+  end
+
+  defp toast(num, conn) do
+    Enum.reduce(1..num, "ʕ", fn(_n, toasts) ->
+      toasts <> "•̫͡•" <> Enum.random(["ʕ", "ʔ"])
+    end)
+    |> String.replace_suffix("ʕ", "ʔ")
+    |> reply(conn)
+  end
+
+
+"ʕ" <> String.duplicate("•̫͡•#{Enum.random(["ʕ", "ʔ"])}", num)
+|> String.replace_suffix("ʕ", "ʔ")
+    |> reply(conn)
+  end
+
 
   @doc "`eggplant me` - get an eggplant from Alice"
   def single_eggplant(conn), do: eggplant(1, conn)
