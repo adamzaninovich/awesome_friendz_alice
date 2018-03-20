@@ -4,7 +4,7 @@ defmodule Alice.Handlers.OhYouSo do
   route ~r/\boh? (yo)?u so\b/i, :oh_you_so
 
   @doc "`oh you so ____` - test Alice's voluminous and vivacious vocabulary"
-  def oh_you_so(conn), do: "oh you so #{Enum.random(words)}" |> reply(conn)
+  def oh_you_so(conn), do: "oh you so #{Enum.random(words())}" |> reply(conn)
 
   @adjectives ~w[
     adorable adventurous academic acceptable acclaimed accomplished accurate acidic

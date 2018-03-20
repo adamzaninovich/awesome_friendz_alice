@@ -225,7 +225,7 @@ defmodule Alice.Handlers.Random do
 
   @doc "`totally` - totes magotes"
   def toooootally(conn) do
-    chance_reply(conn, 0.2, "http://i.imgur.com/XuTdELg.jpg", generate_totally)
+    chance_reply(conn, 0.2, "http://i.imgur.com/XuTdELg.jpg", generate_totally())
   end
 
   defp generate_totally, do: "to#{String.duplicate("o", Enum.random(0..9))}tally"
