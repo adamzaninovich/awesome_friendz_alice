@@ -29,8 +29,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
       Alice.Handlers.Shizzle,
       Alice.Handlers.Reddit,
       Alice.Handlers.Dogeme,
-      Alice.Handlers.Eats,
-      Alice.Handlers.AliceWiki
+      Alice.Handlers.Eats
     ]
   end
 
@@ -44,8 +43,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_shizzle,          "~> 0.1"},
        {:alice_reddit,           "~> 0.1"},
        {:alice_doge_me,          "~> 0.1"},
-       {:alice_eats,             "~> 0.1"},
-       {:alice_wiki,             "~> 1.0"}
+       {:alice_eats,             "~> 0.1"}
+       # {:alice_wiki,             "~> 1.0"}
      ]
   end
 end
