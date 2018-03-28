@@ -30,14 +30,15 @@ defmodule AwesomeFriendzAlice.Mixfile do
       Alice.Handlers.Reddit,
       Alice.Handlers.Dogeme,
       Alice.Handlers.Eats,
-      Alice.Handlers.Wiki
+      Alice.Handlers.Wiki,
+      Alice.Handlers.Weather
     ]
   end
 
   defp deps do
      [
        {:alice, github: "alice-bot/alice", branch: "master", override: true},
-       {:httpoison,              "~> 0.13"},
+       {:httpoison,              "~> 0.13", override: true},
        {:alice_against_humanity, "~> 0.1"},
        {:alice_google_images,    "~> 0.1"},
        {:alice_karma,            "~> 0.3"},
@@ -45,7 +46,9 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_reddit,           "~> 0.1"},
        {:alice_doge_me,          "~> 0.1"},
        {:alice_eats,             "~> 0.1"},
-       {:alice_wiki,             "~> 1.0"}
+       {:alice_wiki,             "~> 1.0"},
+       {:alice_weather,          "~> 0.2"}
+
      ]
   end
 end
