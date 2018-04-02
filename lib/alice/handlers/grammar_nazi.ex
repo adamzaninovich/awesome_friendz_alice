@@ -7,7 +7,7 @@ defmodule Alice.Handlers.GrammarNazi do
   route ~r/\b(((w|c|sh)ould(n't)?)|must) of\b/i, :correct_of
 
   @doc "Corrects your terrible grammar. Not an actual Nazi."
-  def correct_of(%Conn{message: %{user: "U0LADD3C4"}}=conn) do
+  def correct_of(%Conn{message: %{captures: captures, user: "U0LADD3C4"}}=conn) do
     [_full, word | _rest] = captures
     delayed_reply(~s(or maybe "#{word} have"), 1200, conn)
     delayed_reply("Anyway, you're welcome! :+1:", 3600, conn)
