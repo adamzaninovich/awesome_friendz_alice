@@ -41,15 +41,15 @@ defmodule Alice.Handlers.Random do
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
   command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
   route ~r/(?<!img me este haim )bass ?face/i,             :bass_face
-  command ~r/\b(toast|bear) me\z/i,                               :single_toast
-  command ~r/\b(toast|bear) me (\d+)\z/i,                         :multi_toast
+  command ~r/\b(toast|bear) me\z/i,                        :single_toast
+  command ~r/\b(toast|bear) me (\d+)\z/i,                  :multi_toast
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
 
   @doc false
   def good_morning(conn) do
-    chance_reply(conn, 0.8, "http://i.imgur.com/ioLp3DW.jpg", "http://i.imgur.com/OAFDS8L.jpg")
+    chance_reply(conn, 0.01, "http://i.imgur.com/ioLp3DW.jpg")
   end
 
   @doc false
