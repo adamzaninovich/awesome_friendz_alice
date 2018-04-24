@@ -15,6 +15,7 @@ defmodule Alice.Handlers.GrammarNazi do
     delayed_reply("I mean, it's not that hard.", 5000, conn)
     delayed_reply("I believe in you #{Conn.at_reply_user(conn)}", 6000, conn)
     delayed_reply("You can do it!", 7000, conn)
+    delayed_reply("Also, here are some flowers: http://i.imgur.com/ioLp3DW.jpg", 10000, conn)
     reply(conn, ~s(Hey #{Conn.at_reply_user(conn)}, I think you mean "#{word}'ve"))
   end
   def correct_of(%Conn{message: %{captures: captures}}=conn) do
