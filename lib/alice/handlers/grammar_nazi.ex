@@ -27,7 +27,7 @@ defmodule Alice.Handlers.GrammarNazi do
   end
 
   @doc "Provides positive reinforcement for a particular person"
-  def correct_of(%Conn{message: %{user: "U0LADD3C4"}}=conn) do
+  def positive_reinforcement(%Conn{message: %{user: "U0LADD3C4"}}=conn) do
     ~w[
       https://i.imgur.com/B8epvga.gif
       https://i.imgur.com/JslbdTv.gif
