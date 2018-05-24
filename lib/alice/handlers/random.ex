@@ -35,7 +35,7 @@ defmodule Alice.Handlers.Random do
   route ~r/\b(mad|angry|rage)\b/i,                         :u_mad_bro
   route ~r/\bno+pe+\b/i,                                   :nope_nope_nope
   route ~r/\bgooo+d\b/i,                                   :goooood
-  route ~r/\b(ha(ha)+|lol)\b/i,                            :haha
+  route ~r/\b([ha][ha]+|lo+l|lmf?ao|rofl)\b/i,             :haha
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
   command ~r/\beggplant me\z/i,                            :single_eggplant
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
@@ -238,7 +238,7 @@ defmodule Alice.Handlers.Random do
       93 ->
         conn
         |> put_state(:haha_count, 0)
-        |> reply("https://s3.amazonaws.com/giphymedia/media/Ic97mPViHEG5O/giphy.gif")
+        |> reply("https://i.imgur.com/FxtNKIH.gif")
       count -> put_state(conn, :haha_count, count + 1)
     end
   end
