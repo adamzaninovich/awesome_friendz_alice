@@ -68,6 +68,7 @@ defmodule Alice.Handlers.Random do
       http://i.imgur.com/biaviGH.gif
       http://i.imgur.com/rIKgVmY.gif
       http://i.imgur.com/Oi6QYeH.jpg
+      http://i.imgur.com/Pa9SOFY.gif
     ]
     |> random_reply(conn)
   end
