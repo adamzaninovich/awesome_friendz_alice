@@ -35,7 +35,6 @@ defmodule Alice.Handlers.Random do
   route ~r/\b(mad|angry|rage)\b/i,                         :u_mad_bro
   route ~r/\bno+pe+\b/i,                                   :nope_nope_nope
   route ~r/\bgooo+d\b/i,                                   :goooood
-  route ~r/\b(ha(ha)+|lol)\b/i,                            :haha
   route ~r/\bto+t(ally|es)\b/i,                            :toooootally
   command ~r/\beggplant me\z/i,                            :single_eggplant
   command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
@@ -229,19 +228,6 @@ defmodule Alice.Handlers.Random do
   end
 
   defp generate_totally, do: "to#{String.duplicate("o", Enum.random(0..9))}tally"
-
-  @doc "😂"
-  def haha(conn) do
-    conn
-    |> get_state(:haha_count, 0)
-    |> case do
-      93 ->
-        conn
-        |> put_state(:haha_count, 0)
-        |> reply("https://s3.amazonaws.com/giphymedia/media/Ic97mPViHEG5O/giphy.gif")
-      count -> put_state(conn, :haha_count, count + 1)
-    end
-  end
 
   @doc "`toast me` - makes happy toast"
   def single_toast(conn), do: toast(1, conn)
