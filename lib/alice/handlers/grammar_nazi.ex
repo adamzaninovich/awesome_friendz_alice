@@ -50,6 +50,7 @@ defmodule Alice.Handlers.GrammarNazi do
       https://i.imgur.com/jHjiHKE.gif
       https://i.imgur.com/gcnrLM7.gif
       https://i.imgur.com/sHLXCLX.gif
+      https://i.imgur.com/N87QkPO.gif
     ]
     |> random_reply(conn)
   end
