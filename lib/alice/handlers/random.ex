@@ -5,43 +5,58 @@ defmodule Alice.Handlers.Random do
 
   # Routes
 
-  route ~r/\bgoo+d ?morning!*\b/i,                         :good_morning
-  route ~r/\bflowery bullshit\b/i,                         :flowery_bullshit
-  route ~r/\btro+l+(o+l+)+(o+)?\b/i,                       :trololol
-  route ~r/\btable ?flip\b/i,                              :table_flip
-  route ~r/\bbig ?data\b/i,                                :big_data
-  route ~r/\bcocaine\b/i,                                  :cocaine
-  route ~r/\bdemeter\b/i,                                  :say_demeter_again
-  route ~r/\bgrapes\b/i,                                   :grapes
-  route ~r/\bbusted\b/i,                                   :busted
-  route ~r/\bdev[- ]?ops\b/i,                              :devops
-  route ~r/\bIT IS DECIDED\!?\b/,                          :it_is_decided
-  route ~r/\bmadness\b/i,                                  :this_is_sparta
-  route ~r/\bmind blown\b/i,                               :mind_blown
-  route ~r/\bthanks,? alice\b/i,                           :thanks
-  command ~r/thanks/i,                                     :thanks
-  route ~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i,           :aww_yiss
-  route ~r/\bdark ?souls?\b/i,                             :i_dont_care
-  route ~r/\bthe games?\b/i,                               :the_game
-  route ~r/\b(I )?(luv|love|:heart:) (yo)?u,? alice\b/i,   :alice_love
-  route ~r/\balice,? I (love|:heart:) you\b/i,             :alice_love
-  command ~r/\bI (love|:heart:) you\b/i,                   :alice_love
-  command ~r/\bdie\b/i,                                    :die
-  route ~r/\bmic ?drop\b/i,                                :mic_drop
-  route ~r/\bdrop ?(the)? ?mic\b/i,                        :mic_drop
-  route ~r/\bclear ?(your)? ?cache\??\b/i,                 :cache_bug
-  route ~r/\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/i,   :dis_gon_b_gud
-  route ~r/\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, :dddddrop_the_bass
-  route ~r/\b(mad|angry|rage)\b/i,                         :u_mad_bro
-  route ~r/\Ano+pe+\!+\z/i,                                :nope_nope_nope
-  route ~r/\bgooo+d\b/i,                                   :goooood
-  route ~r/\bto+t(ally|es)\b/i,                            :toooootally
-  command ~r/\beggplant me\z/i,                            :single_eggplant
-  command ~r/\beggplant me (\d+)\z/i,                      :multi_eggplant
-  command ~r/\ba?re? (yo)?u high\??/i,                     :are_you_high
-  route ~r/(?<!img me este haim )bass ?face/i,             :bass_face
-  command ~r/\b(toast|bear) me\z/i,                        :single_toast
-  command ~r/\b(toast|bear) me (\d+)\z/i,                  :multi_toast
+  command(~r/\bplay (.+)\z/i, :play)
+  route(~r/\bgoo+d ?morning!*\b/i, :good_morning)
+  route(~r/\bflowery bullshit\b/i, :flowery_bullshit)
+  route(~r/\btro+l+(o+l+)+(o+)?\b/i, :trololol)
+  route(~r/\btable ?flip\b/i, :table_flip)
+  route(~r/\bbig ?data\b/i, :big_data)
+  route(~r/\bcocaine\b/i, :cocaine)
+  route(~r/\bdemeter\b/i, :say_demeter_again)
+  route(~r/\bgrapes\b/i, :grapes)
+  route(~r/\bbusted\b/i, :busted)
+  route(~r/\bdev[- ]?ops\b/i, :devops)
+  route(~r/\bIT IS DECIDED\!?\b/, :it_is_decided)
+  route(~r/\bmadness\b/i, :this_is_sparta)
+  route(~r/\bmind blown\b/i, :mind_blown)
+  route(~r/\bthanks,? alice\b/i, :thanks)
+  command(~r/thanks/i, :thanks)
+  route(~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i, :aww_yiss)
+  route(~r/\bdark ?souls?\b/i, :i_dont_care)
+  route(~r/\bthe games?\b/i, :the_game)
+  route(~r/\b(I )?(luv|love|:heart:) (yo)?u,? alice\b/i, :alice_love)
+  route(~r/\balice,? I (love|:heart:) you\b/i, :alice_love)
+  command(~r/\bI (love|:heart:) you\b/i, :alice_love)
+  command(~r/\bdie\b/i, :die)
+  route(~r/\bmic ?drop\b/i, :mic_drop)
+  route(~r/\bdrop ?(the)? ?mic\b/i, :mic_drop)
+  route(~r/\bclear ?(your)? ?cache\??\b/i, :cache_bug)
+  route(~r/\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/i, :dis_gon_b_gud)
+  route(~r/\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, :dddddrop_the_bass)
+  route(~r/\b(mad|angry|rage)\b/i, :u_mad_bro)
+  route ~r/\Ano+pe+\!+\z/i, :nope_nope_nope)
+  route(~r/\bgooo+d\b/i, :goooood)
+  route(~r/\bto+t(ally|es)\b/i, :toooootally)
+  command(~r/\beggplant me\z/i, :single_eggplant)
+  command(~r/\beggplant me (\d+)\z/i, :multi_eggplant)
+  command(~r/\ba?re? (yo)?u high\??/i, :are_you_high)
+  route(~r/(?<!img me este haim )bass ?face/i, :bass_face)
+  command(~r/\b(toast|bear) me\z/i, :single_toast)
+  command(~r/\b(toast|bear) me (\d+)\z/i, :multi_toast)
+
+  @doc "`play Despacito 2` - attempts to play a song"
+  def play(conn) do
+    song = Alice.Conn.last_capture(conn)
+
+    """
+    ɴᴏᴡ ᴘʟᴀʏɪɴɢ: #{song}
+
+    ───────────────────────────────:white_circle:────────────
+
+    ◄◄⠀▐▐ ⠀►►⠀⠀ ⠀ 2:57 / 3:48 ⠀ ───○ :loud_sound:⠀ ᴴᴰ :gear: ❐ ⊏⊐
+    """
+    |> reply(conn)
+  end
 
   @doc false
   def flowery_bullshit(conn), do: "http://i.imgur.com/ioLp3DW.jpg" |> reply(conn)
@@ -54,7 +69,7 @@ defmodule Alice.Handlers.Random do
   @doc false
   def trololol(conn), do: "http://i.imgur.com/ynr0Qms.gif" |> reply(conn)
 
-  @dof false
+  @doc false
   def table_flip(conn), do: "http://i.imgur.com/IFabn5c.gif" |> reply(conn)
 
   @doc "`big data`/`bigdata` - BIG data"
@@ -90,7 +105,7 @@ defmodule Alice.Handlers.Random do
   @doc "`mind blown` - blow your mind"
   def mind_blown(conn), do: "http://i.imgur.com/lr4KJPQ.gif" |> reply(conn)
 
-  @doc "`this is <anything>` - THIS IS SPARTA"
+  @doc "`madness` - THIS IS SPARTA"
   def this_is_sparta(conn), do: "http://i.imgur.com/ydJ3Vcr.jpg" |> reply(conn)
 
   @doc "Either `thanks alice` or `@alice thanks` - tell Alice thanks"
@@ -109,17 +124,20 @@ defmodule Alice.Handlers.Random do
   def the_game(%Conn{message: %{text: text}} = conn) do
     the_game(conn, String.downcase(text))
   end
+
   def the_game(conn, "i lost the game"), do: conn
+
   def the_game(%Conn{message: %{channel: channel}} = conn, _) do
-    :calendar.universal_time
-    |> :calendar.datetime_to_gregorian_seconds
+    :calendar.universal_time()
+    |> :calendar.datetime_to_gregorian_seconds()
     |> game_response(get_state(conn, {:next_loss, channel}, 0), conn)
   end
 
   defp game_response(now, next_loss, conn) when now < next_loss, do: conn
-  defp game_response(now, _, conn=%Conn{message: %{channel: channel}}) do
+
+  defp game_response(now, _, conn = %Conn{message: %{channel: channel}}) do
     conn
-    |> put_state({:next_loss, channel}, now + (30*60))
+    |> put_state({:next_loss, channel}, now + 30 * 60)
     |> chance_reply(0.25, "http://i.imgur.com/Z8awIpt.png", "I lost the game")
   end
 
@@ -130,11 +148,12 @@ defmodule Alice.Handlers.Random do
       `alice, I love`/:heart:` you`
       `@alice I love`/:heart:` you`
   """
-  def alice_love(%Conn{message: %{user: "U0LADD3C4"}}=conn) do
+  def alice_love(%Conn{message: %{user: "U0LADD3C4"}} = conn) do
     reply(conn, "aww, we're such good friends, #{Conn.at_reply_user(conn)}! :+1:")
   end
+
   def alice_love(conn) do
-    [love|_rest] = conn.message.captures |> Enum.reverse
+    [love | _rest] = conn.message.captures |> Enum.reverse()
     emoji = Enum.random(~w[:wink: :heart_eyes: :kissing_heart: :hugging_face:])
     "aww, I #{love} you too, #{Conn.at_reply_user(conn)}! #{emoji}" |> reply(conn)
   end
@@ -210,6 +229,7 @@ defmodule Alice.Handlers.Random do
       http://i.imgur.com/yBE4JbR.jpg
       http://i.imgur.com/DgczUtV.png
       http://i.imgur.com/RgylcEM.png
+      http://i.imgur.com/qJC1zLM.jpg
       http://i.imgur.com/LRBIPMP.png]
     |> random_reply(conn)
   end
@@ -236,13 +256,13 @@ defmodule Alice.Handlers.Random do
   @doc "`toast me (num)` - makes many happy toastes"
   def multi_toast(conn) do
     conn
-    |> Conn.last_capture
-    |> String.to_integer
+    |> Conn.last_capture()
+    |> String.to_integer()
     |> toast(conn)
   end
 
   defp toast(num, conn) do
-    Enum.reduce(1..num, "ʕ", fn(_n, toasts) ->
+    Enum.reduce(1..num, "ʕ", fn _n, toasts ->
       toasts <> "•̫͡•" <> Enum.random(["ʕ", "ʔ"])
     end)
     |> String.replace_suffix("ʕ", "ʔ")
@@ -255,8 +275,8 @@ defmodule Alice.Handlers.Random do
   @doc "`eggplant me (num)` - get many eggplants from Alice"
   def multi_eggplant(conn) do
     conn
-    |> Conn.last_capture
-    |> String.to_integer
+    |> Conn.last_capture()
+    |> String.to_integer()
     |> eggplant(conn)
   end
 
