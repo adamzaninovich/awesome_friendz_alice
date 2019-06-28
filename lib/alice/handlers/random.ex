@@ -34,7 +34,7 @@ defmodule Alice.Handlers.Random do
   route(~r/\b(dis|this)( is)? gon(na)? be? g(u|oo)d\b/i, :dis_gon_b_gud)
   route(~r/\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, :dddddrop_the_bass)
   route(~r/\b(mad|angry|rage)\b/i, :u_mad_bro)
-  route(~r/\bno+pe+\b/i, :nope_nope_nope)
+  route ~r/\Ano+pe+\!+\z/i, :nope_nope_nope)
   route(~r/\bgooo+d\b/i, :goooood)
   route(~r/\bto+t(ally|es)\b/i, :toooootally)
   command(~r/\beggplant me\z/i, :single_eggplant)
