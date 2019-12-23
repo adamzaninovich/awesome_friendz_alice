@@ -42,6 +42,7 @@ defmodule Alice.Handlers.Random do
   route(~r/(?<!img me este haim )bass ?face/i, :bass_face)
   command(~r/\b(toast|bear) me\z/i, :single_toast)
   command(~r/\b(toast|bear) me (\d+)\z/i, :multi_toast)
+  route(~r/\bTHANK YOU!?\b/, :thank_you)
 
   @doc "`play Despacito 2` - attempts to play a song"
   def play(conn) do
@@ -289,5 +290,10 @@ defmodule Alice.Handlers.Random do
     new_message = Map.put(conn.message, :text, "img me este haim bass face")
     Alice.ChatBackends.Slack.handle_event(new_message, conn.slack, conn.state)
     conn
+  end
+
+  @doc "`THANK YOU`"
+  def thank_you(conn) do
+    reply(conn, "https://i.imgur.com/IIYzC0H.png")
   end
 end
