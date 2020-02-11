@@ -94,7 +94,7 @@ defmodule Alice.Handlers.Random do
   def busted(conn), do: "http://i.imgur.com/MasM57I.png" |> reply(conn)
 
   @doc "`devops`/`dev-ops`/`dev ops` - ops problem now!"
-  def devops(conn), do: "http://i.imgur.com/6sNQ3yt.jpg" |> reply(conn)
+  def devops(conn), do: chance_reply(conn, 0.25, "http://i.imgur.com/6sNQ3yt.jpg")
 
   @doc "`IT IS DECIDED` - nail that decision coffin"
   def it_is_decided(conn), do: "http://i.imgur.com/80PQSCo.gif" |> reply(conn)
