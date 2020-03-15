@@ -33,7 +33,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
       Alice.Handlers.Wiki,
       Alice.Handlers.Weather,
       Alice.Handlers.Haha,
-      Alice.Handlers.GoodMorningLanguages
+      Alice.Handlers.GoodMorningLanguages,
+      Alice.Handlers.Roller
     ]
   end
 
@@ -51,7 +52,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_wiki,             "~> 1.0"},
        {:alice_weather,          "~> 0.2"},
        {:alice_haha,             "~> 1.0"},
-       {:alice_good_morning,     "~> 1.0"}
+       {:alice_good_morning,     "~> 1.0"},
+       {:alice_roller,           "~> 0.2"}
      ]
   end
 end
