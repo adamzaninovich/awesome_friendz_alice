@@ -53,7 +53,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
        {:alice_weather,          "~> 0.2"},
        {:alice_haha,             "~> 1.0"},
        {:alice_good_morning,     "~> 1.0"},
-       {:alice_roller,           "~> 0.2.2"}
+       {:alice_roller,           "~> 0.3"}
      ]
   end
 end
