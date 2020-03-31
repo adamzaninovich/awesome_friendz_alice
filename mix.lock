@@ -1,5 +1,5 @@
 %{
-  "alice": {:git, "https://github.com/alice-bot/alice.git", "200503801f3c233fb53986691f8e8cfd80723785", [branch: "master"]},
+  "alice": {:git, "https://github.com/alice-bot/alice.git", "a6b91fdd3e3fb5d7a1b343761a23def44435f47d", [branch: "master"]},
   "alice_against_humanity": {:hex, :alice_against_humanity, "0.1.3", "4dcb78db6739606a0d52a2846452fc85904f6181deb9ad83e57cf6609fdf9f52", [:mix], [{:alice, "~> 0.3", [hex: :alice, repo: "hexpm", optional: false]}], "hexpm", "248c494fcb7fb546954d6337b63cec3f1bced53e98079a4774e4a28acd799d91"},
   "alice_doge_me": {:hex, :alice_doge_me, "0.1.1", "71ed6e36681e20f51d76f7ea57e41014644230b1bb9b9d8876c8e071a753bc7c", [:mix], [{:alice, "~> 0.3", [hex: :alice, repo: "hexpm", optional: false]}], "hexpm", "cabb1d05ab0887c46e7e88803d5bc9234158629daae60677f04cb6512d7e920d"},
   "alice_eats": {:hex, :alice_eats, "0.1.1", "d7628c4b76d36dc1984f142741a5e68e8451c2335f4551d860c11eeaaff1317a", [:mix], [{:alice, "~> 0.3.6", [hex: :alice, repo: "hexpm", optional: false]}], "hexpm", "e88dc38c18a0233764f16e90415c3a18fad7742f912f4677161d3e00a789c19d"},
@@ -42,6 +42,7 @@
   "spotify_ex": {:hex, :spotify_ex, "2.0.1", "45b9469d7b0ea289338d343fedf51f31b2327bb47f9fe30aa855c577a896816d", [:mix], [{:httpoison, "~> 0.9.0", [hex: :httpoison, optional: false]}, {:plug, "~> 1.2.0", [hex: :plug, optional: false]}, {:poison, ">= 1.5.0", [hex: :poison, optional: false]}]},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [:make, :rebar], [], "hexpm", "4f8805eb5c8a939cf2359367cb651a3180b27dfb48444846be2613d79355d65e"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
+  "telemetry": {:hex, :telemetry, "0.4.1", "ae2718484892448a24470e6aa341bc847c3277bfb8d4e9289f7474d752c09c7f", [:rebar3], [], "hexpm", "4738382e36a0a9a2b6e25d67c960e40e1a2c95560b9f936d8e29de8cd858480f"},
   "timex": {:hex, :timex, "2.2.1", "0d69012a7fd69f4cbdaa00cc5f2a5f30f1bed56072fb362ed4bddf60db343022", [:mix], [{:combine, "~> 0.7", [hex: :combine, repo: "hexpm", optional: false]}, {:gettext, "~> 0.10", [hex: :gettext, repo: "hexpm", optional: false]}, {:tzdata, "~> 0.1.8 or ~> 0.5", [hex: :tzdata, repo: "hexpm", optional: false]}], "hexpm"},
   "tzdata": {:hex, :tzdata, "0.5.6", "d44c59175b8e9a170b3b17d6933820de98a3f0932f3a0615d884b8c20e93a87a", [], [{:hackney, "~> 1.0", [hex: :hackney, repo: "hexpm", optional: false]}], "hexpm"},
   "unicode_util_compat": {:hex, :unicode_util_compat, "0.3.1", "a1f612a7b512638634a603c8f401892afbf99b8ce93a45041f8aaca99cadb85e", [:rebar3], [], "hexpm", "da1d9bef8a092cc7e1e51f1298037a5ddfb0f657fe862dfe7ba4c5807b551c29"},
