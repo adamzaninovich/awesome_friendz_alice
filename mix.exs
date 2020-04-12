@@ -44,7 +44,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
     [
       # {:alice, github: "alice-bot/alice", branch: "chore/update-slack-adapter", override: true},
       # {:alice, path: "~/projects/alice/alice", override: true},
-      {:alice, "~> 0.4.1", override: true},
+      {:alice, "~> 0.4.2", override: true},
       {:httpoison, "~> 0.13", override: true},
       {:alice_against_humanity, "~> 0.1"},
       {:alice_google_images, "~> 0.1"},
@@ -56,10 +56,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
       {:alice_wiki, "~> 1.0"},
       {:alice_weather, "~> 0.2"},
       {:alice_haha, "~> 1.0"},
-      # {:alice_good_morning, "~> 1.0"},
-      {:alice_good_morning,
-       github: "adamzaninovich/alice_good_morning",
-       branch: "bug/update-good-morning-languages-to-use-alice-conn-functions"},
+      {:alice_good_morning, "~> 1.0"},
       {:alice_roller, "~> 0.3"}
     ]
   end
