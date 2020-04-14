@@ -43,6 +43,17 @@ defmodule Alice.Handlers.Random do
   command(~r/\b(toast|bear) me\z/i, :single_toast)
   command(~r/\b(toast|bear) me (\d+)\z/i, :multi_toast)
   route(~r/\bTHANK YOU!?\b/, :thank_you)
+  route(~r/\b(javascript|js) framework\b/i, :js_framework)
+
+  def js_framework(conn) do
+    js = Conn.last_capture(conn)
+
+    IO.inspect(conn.message.text)
+
+    message = conn.message.text
+    new_message = String.replace(message, js, "_another_ #{js}")
+    reply(conn, ~s(you mean "#{new_message}"?))
+  end
 
   @doc "`play Despacito 2` - attempts to play a song"
   def play(conn) do
