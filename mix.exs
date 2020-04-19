@@ -14,29 +14,8 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   def application do
     [
-      applications: [:alice, :alice_reddit, :alice_doge_me],
-      mod: {Alice, %{handlers: handlers()}}
-    ]
-  end
-
-  defp handlers do
-    [
-      Alice.Handlers.Random,
-      Alice.Handlers.GrammarNazi,
-      Alice.Handlers.OhYouSo,
-      Alice.Handlers.Feedback,
-      Alice.Handlers.AgainstHumanity,
-      Alice.Handlers.GoogleImages,
-      Alice.Handlers.Karma,
-      Alice.Handlers.Shizzle,
-      Alice.Handlers.Reddit,
-      Alice.Handlers.Dogeme,
-      Alice.Handlers.Eats,
-      Alice.Handlers.Wiki,
-      Alice.Handlers.Weather,
-      Alice.Handlers.Haha,
-      Alice.Handlers.GoodMorningLanguages,
-      Alice.Handlers.Roller
+      applications: [:alice_reddit, :alice_doge_me],
+      mod: {Alice, %{}}
     ]
   end
 

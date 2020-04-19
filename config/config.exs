@@ -1,5 +1,26 @@
 use Mix.Config
 
+config :alice,
+  handlers: [
+    Alice.Handlers.Random,
+    Alice.Handlers.GrammarNazi,
+    Alice.Handlers.OhYouSo,
+    Alice.Handlers.Feedback,
+    Alice.Handlers.AgainstHumanity,
+    Alice.Handlers.GoogleImages,
+    Alice.Handlers.Karma,
+    Alice.Handlers.Shizzle,
+    Alice.Handlers.Reddit,
+    Alice.Handlers.Dogeme,
+    Alice.Handlers.Eats,
+    Alice.Handlers.Wiki,
+    Alice.Handlers.Weather,
+    Alice.Handlers.Haha,
+    Alice.Handlers.GoodMorningLanguages,
+    Alice.Handlers.Roller
+  ]
+
+
 config :alice_google_images,
   cse_id: System.get_env("GOOGLE_CSE_ID"),
   cse_token: System.get_env("GOOGLE_CSE_TOKEN"),
