@@ -18,8 +18,10 @@ defmodule Alice.Handlers.Random do
   route(~r/\bIT IS DECIDED\!?\b/, :it_is_decided)
   route(~r/\bmadness\b/i, :this_is_sparta)
   route(~r/\bmind blown\b/i, :mind_blown)
-  route(~r/\bthanks,? alice\b/i, :thanks)
-  command(~r/thanks/i, :thanks)
+  route(~r/\bthank(s| you),? alice\b/i, :thanks)
+  command(~r/thank(s| you)/i, :thanks)
+  route(~r/\b((fuck you|wtf|damn? ?(it|you)),?|bad) alice\b/i, :bad_alice)
+  commang(~r/(fuck you|wtf|damn? ?(it|you))/i, :bad_alice)
   route(~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i, :aww_yiss)
   route(~r/\bdark ?souls?\b/i, :i_dont_care)
   route(~r/\bthe games?\b/i, :the_game)
@@ -119,6 +121,20 @@ defmodule Alice.Handlers.Random do
 
   @doc "Either `thanks alice` or `@alice thanks` - tell Alice thanks"
   def thanks(conn), do: "no prob, bob" |> reply(conn)
+
+  @doc false
+  def bad_alice(conn) do
+    ~w[
+      https://i.imgur.com/pcj45CQ.gif
+      https://i.imgur.com/PP0ICsx.gif
+      https://i.imgur.com/PiSYqpq.gif
+      https://i.imgur.com/jGGUWyo.gif
+      https://i.imgur.com/Q5tqiCq.gif
+      https://i.imgur.com/kaQnevF.gif
+      https://i.imgur.com/oFNPOQ0.gif
+    ]
+    |> random_reply(conn)
+  end
 
   @doc "`aww yiss`/`bread crumbs` - motha fuckin' bread crumbs"
   def aww_yiss(conn) do
