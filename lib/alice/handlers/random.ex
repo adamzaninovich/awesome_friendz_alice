@@ -21,7 +21,7 @@ defmodule Alice.Handlers.Random do
   route(~r/\bthank(s| you),? alice\b/i, :thanks)
   command(~r/thank(s| you)/i, :thanks)
   route(~r/\b((fuck you|wtf|damn? ?(it|you)),?|bad) alice\b/i, :bad_alice)
-  commang(~r/(fuck you|wtf|damn? ?(it|you))/i, :bad_alice)
+  command(~r/(fuck you|wtf|damn? ?(it|you))/i, :bad_alice)
   route(~r/\b(a+w+ ?y+i+s+|bread ?crumbs)!*\b/i, :aww_yiss)
   route(~r/\bdark ?souls?\b/i, :i_dont_care)
   route(~r/\bthe games?\b/i, :the_game)
