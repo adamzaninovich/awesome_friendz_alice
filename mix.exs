@@ -21,7 +21,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
 
   defp deps do
     [
-      {:alice, github: "alice-bot/alice", branch: "chore/update-slack-adapter", override: true},
+      {:alice, github: "alice-bot/alice", override: true},
       # {:alice, path: "~/projects/alice/alice", override: true},
       # {:alice, "~> 0.4.2", override: true},
       {:poison, "~> 4.0", override: true},
