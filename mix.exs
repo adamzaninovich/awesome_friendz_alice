@@ -35,7 +35,7 @@ defmodule AwesomeFriendzAlice.Mixfile do
       {:alice_eats, "~> 0.1"},
       {:alice_wiki, "~> 1.0"},
       {:alice_weather, github: "alice-bot/alice_weather", branch: "master"},
-      {:alice_haha, "~> 1.0"},
+      {:alice_haha, "~> 2.0"},
       # {:alice_good_morning, "~> 1.0"},
       {:alice_good_morning, github: "tielur/alice_good_morning", branch: "master"},
       {:alice_roller, "~> 0.3"}
